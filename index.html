@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meme + Quote Matcher</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Meme & Quote Matcher</h1>
+
+        <input type="text" id="search" placeholder="Search memes or quotes...">
+        <button onclick="searchContent()">Search</button>
+
+        <div class="form-section">
+          <input type="text" id="memeURL" placeholder="Meme URL">
+          <input type="text" id="quoteText" placeholder="Quote">
+          <button onclick="addContent()">Add</button>
+        </div>
+    
+        <div class="actions">
+          <button onclick="shuffleContent()">Shuffle</button>
+           <button onclick="randomCombo()">Random Combo</button>
+        </div>
+    
+        <div id="gallery"></div>
+    </div>
+</body>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+<script src="./script.js"></script>
+</html>
