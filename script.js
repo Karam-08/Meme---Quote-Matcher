@@ -1,50 +1,54 @@
 memes = [
-    'https://www.care.com/c/wp-content/uploads/sites/2/2021/03/memes-for-kids-1.png',
-    'https://i.pinimg.com/474x/ee/05/48/ee054872761d9054bacf8c2c1e97ee73.jpg',
-    'https://preview.redd.it/nxrbxj9eljd21.jpg?width=640&crop=smart&auto=webp&s=44ba3e63076b16b12ac092504074e1dfd9c2d38a',
-    'https://forums-cdn.spongepowered.org/uploads/default/original/3X/d/0/d0399730b419ac7f72a00aa5bbea30946ce9b0d5.jpeg',
-    'https://www.care.com/c/wp-content/uploads/sites/2/2021/03/memes-for-kids-4.png',
-    'https://i.ytimg.com/vi/P0ADL0_-Cag/maxresdefault.jpg',
-    'https://i.pinimg.com/564x/0d/fd/a3/0dfda353d53c879c73fb5c5d55e89c03.jpg',
-    'https://www.care.com/c/wp-content/uploads/sites/2/2021/03/memes-for-kids-6.png',
-    'https://preview.redd.it/g4vm7de3q4j51.jpg?width=640&crop=smart&auto=webp&s=6b1a2d277669b91f713fc7484e57e20de98b97c3',
-    'https://preview.redd.it/8ze5zhn5m1g61.gif?width=676&format=mp4&s=bb264df062c4bbe50741b47486fb659f3116cc47',
-    'https://cdn-useast1.kapwing.com/static/templates/always-has-been-meme-template-full-be5848f2.webp',
-    'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQgz7OQSV_y5pLNrA3cqYPmikoYwfYqbsPRmQ&s',
-    'https://cdn-useast1.kapwing.com/static/templates/shut-up-and-take-my-money-meme-template-full-dac9d95b.webp',
+    'https://us-tuna-sounds-images.voicemod.net/88727c62-3d3e-4b43-982c-4e0332287ba1-1721417596236.jpg',
+    'https://i1.sndcdn.com/artworks-JJOu6dvb4Swg3f5K-bl6o5g-t500x500.jpg',
+    'https://cdn-images.dzcdn.net/images/cover/173ba7fc2bbf9e902b61a5636a3b6dc7/0x1900-000000-80-0-0.jpg',
+    'https://media1.tenor.com/m/2hO1qFdswTcAAAAd/adrian-adrian-explain-our-friend-group.gif',
+    'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQN1SZrkCViLLUFVSK0dsxEEirzrMYWGlwIUUn9rK_Mw9chUXgGjN564m2uGkTkJdNB44g&usqp=CAU',
+    'https://i.redd.it/mcrnke8jc50e1.jpeg',
+    'https://preview.redd.it/67m-rate-my-looks-v0-zwvnlpu0ayhf1.jpeg?width=640&crop=smart&auto=webp&s=3e3517c372fcbbab5072d3f082ebdc55c053f708',
+    'https://preview.redd.it/why-is-this-in-my-recommended-v0-9t6or3qp67fe1.jpeg?width=640&crop=smart&auto=webp&s=d97421cc7e484881f9ece8d684069fb04997e1c2',
+    'https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcSwtlYZuMSBALPJIR5RblVT2UL2D5SrLuxU52ppsBkmoWgjHQ1L',
+    'https://content.imageresizer.com/images/memes/Sigma-Cat-meme-7p2ecu.jpg',
+    'https://imageproxy.ifunny.co/resize:640x,quality:90x75/images/138918d716ce66c110365b9c6248b20e45959dda4109459fbc195e8fde9f52a0_3.jpg',
+    'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ8rU2B0NROBotA7f2cAapEfd2OqQu-wUqJSJsgw6yRcmRRYmccsjfdX9Ugm5JitKSK5D4&usqp=CAU',
+    'https://i.ytimg.com/vi/QwFjci1zPho/maxresdefault.jpg?sqp=-oaymwEmCIAKENAF8quKqQMa8AEB-AH-CYAC0AWKAgwIABABGE8gZShhMA8=&rs=AOn4CLDw_oN7E2bQFBiKkGMhEYK4-HXQhQ',
     'https://img-s-msn-com.akamaized.net/tenant/amp/entityid/BB1raLyw.img?w=690&h=388&m=6',
     'https://preview.redd.it/the-kendrick-mustard-of-duty-meme-is-huge-right-now-v0-evovdf5yrnve1.jpeg?auto=webp&s=0428c2e728bf7d41cd67829ed996b8e7918a99e8',
     'https://pbs.twimg.com/media/EXDk0oYWkAEBe7D.jpg',
-    'https://static.wikia.nocookie.net/jerma-lore/images/a/a4/Whentheimposterissus.png/revision/latest/scale-to-width-down/250?cb=20210123063951',
-    'https://media.tenor.com/xKifZxFX42oAAAAM/meme-doge.gif',
+    'https://preview.redd.it/on-this-day-three-years-ago-u-lavameteor-posted-they-sus-v0-zr8cfaqja50c1.jpg?width=640&crop=smart&auto=webp&s=79340572b4618438ee98d910ecaa996812872e76',
+    'https://media1.tenor.com/m/4eALS2xDONAAAAAd/oi-oi-oi-baka.gif',
     'https://pbs.twimg.com/media/FLGRTliUUAMce6a.jpg',
     'https://media1.tenor.com/m/2ndcvKu-928AAAAd/bring-out-the-fine-china.gif',
     'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ8qUan4GWRBJyJtlKPr5lDEwLBZw37tQ2rKQ&s',
 ]
 
-meme_descriptions = [
-    'The look you give your friend when your teacher says to find a partner',
-    'Me: *puts on hand sanitizer* A cut I never knew existed:',
-    'When you flush the toilet and the water starts rising',
-    'I love sleep because its like a time machine to breakfast',
-    'When the bell rings and the teacher forgot to mention homework',
-    'POV: You entered the wrong classroom',
-    'Shout out to old people for graduating high school without google',
-    'When the waiter asks how the food is...',
-    'Teacher hypes up class party all year The Party:',
-    'You can copy my homework, but dont make it obvious',
-    'Always has been',
-    '5 stars',
-    'People trying to get sold out supplies at the grocery store',
+quotes = [
+    'boom boom boom boom boomboom boom boom boom boom boom boomboomboom', // BOIIII ts (this) mysic so tuff
+    'Heh ha ha hahaha ha ha', // Evil rick laugh
+    'Those who know 💀', // dos uno
+    'Adrian, explain our friend group',
+    "Coffee spelt backwards is eeffoc. Which is crazy, because until I've had my coffee, I don't give eeffoc... about anything.",
+    'Kid insults Dhar Mann, gets dragged to hell by Satan himself',
+    'HEEEEEY SIX SEVENNN', // ts (this) is hella tuff boiiiii
+    'Minecraft but I have carbon monoxide poisoning',
+    'Put me in a lamar jackson edit',
+    'Sigma cat',
+    "New chinese restaurant just opened up in the hood",
+    'Fortnite or PUBG',
+    'Can we just talk about the political and economic state of the world right now?',
     'Eye of Rah',
     'Call of Mustard',
     'Only a spoonful',
     'When the imposter is sus',
-    'Doge',
+    'baka... baakaa. oi oi oi... BAAKAA!.. BAAAKAAAA!!',
     'Roblox man face',
     'Honey we have guests Bring out the Fine China',
     '40+ year old pluggnb rapper 🔥🙏 did unc snap?',
 ]
+
+memes.forEach(function(url){
+    $("<img>", {src: url, alt: "meme"}).appendTo("#gallery");
+})
 
 function searchContent(){
     
