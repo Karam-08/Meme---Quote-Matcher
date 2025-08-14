@@ -1,5 +1,5 @@
 memes = [
-    'https://us-tuna-sounds-images.voicemod.net/88727c62-3d3e-4b43-982c-4e0332287ba1-1721417596236.jpg',
+ 'https://us-tuna-sounds-images.voicemod.net/88727c62-3d3e-4b43-982c-4e0332287ba1-1721417596236.jpg',
     'https://i1.sndcdn.com/artworks-JJOu6dvb4Swg3f5K-bl6o5g-t500x500.jpg',
     'https://cdn-images.dzcdn.net/images/cover/173ba7fc2bbf9e902b61a5636a3b6dc7/0x1900-000000-80-0-0.jpg',
     'https://media1.tenor.com/m/2hO1qFdswTcAAAAd/adrian-adrian-explain-our-friend-group.gif',
@@ -17,7 +17,7 @@ memes = [
     'https://pbs.twimg.com/media/EXDk0oYWkAEBe7D.jpg',
     'https://preview.redd.it/on-this-day-three-years-ago-u-lavameteor-posted-they-sus-v0-zr8cfaqja50c1.jpg?width=640&crop=smart&auto=webp&s=79340572b4618438ee98d910ecaa996812872e76',
     'https://media1.tenor.com/m/4eALS2xDONAAAAAd/oi-oi-oi-baka.gif',
-    'https://pbs.twimg.com/media/FLGRTliUUAMce6a.jpg',
+    'https://i.ytimg.com/vi/NhHb9usKy6Q/maxresdefault.jpg',
     'https://media1.tenor.com/m/2ndcvKu-928AAAAd/bring-out-the-fine-china.gif',
     'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ8qUan4GWRBJyJtlKPr5lDEwLBZw37tQ2rKQ&s',
 ]
@@ -41,7 +41,7 @@ quotes = [
     'Only a spoonful',
     'When the imposter is sus',
     'baka... baakaa. oi oi oi... BAAKAA!.. BAAAKAAAA!!',
-    'Roblox man face',
+    'You are my sunshine',
     'Honey we have guests Bring out the Fine China',
     '40+ year old pluggnb rapper 🔥🙏 did unc snap?',
 ]
@@ -50,6 +50,30 @@ memes.forEach(function(url){
     $("<img>", {src: url, alt: "meme"}).appendTo("#gallery");
 })
 
-function searchContent(){
-    
+
+function searchContent(input){
+
+}
+
+function addContent(){
+    url = $("#memeURL").val();
+    $("<img>", {src: url, alt: "meme"}).appendTo("#gallery");
+}
+
+function shuffleContent(){
+    let currentIndex = memes.length
+    while(currentIndex !== 0){
+        let randomIndex = Math.floor(Math.random() * currentIndex);
+        currentIndex--
+
+        [memes[currentIndex], memes[randomIndex]] = [memes[randomIndex], memes[currentIndex]]
+    }
+    $("#gallery").empty()
+    memes.forEach(function(url){
+        $("<img>", {src: url, alt: "meme"}).appendTo("#gallery");
+    })
+}
+
+function randomCombo(){
+
 }
