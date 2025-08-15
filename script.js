@@ -25,7 +25,7 @@ memes = [
 quotes = [
     'Sigma Patrick Bateman', // BOIIII ts (this) mysic so tuff
     'Evil rick AI', // Evil rick laugh
-    'Those who know 💀', // dos uno
+    'Dos Uno 💀', // Those who know 💀
     'Adrian, explain our friend group',
     "Coffee spelt backwards is eeffoc. Which is crazy, because until I've had my coffee, I don't give eeffoc... about anything.",
     'Kid insults Dhar Mann, gets dragged to hell by Satan himself',
@@ -71,7 +71,10 @@ function searchContent(input){
 
 function addContent(){
     url = $("#memeURL").val();
-    $("<img>", {src: url, alt: "meme"}).appendTo("#gallery");
+    index = $("#quoteText").val();
+    memes.push(url)
+    quotes.push(index)
+    renderGallery();
 }
 
 function shuffleContent(){
