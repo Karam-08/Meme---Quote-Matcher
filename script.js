@@ -63,7 +63,6 @@ function renderGallery() {
             .appendTo("#gallery");
     });
 }
-// Call this once on page load
 renderGallery();
 
 function searchContent(input){
