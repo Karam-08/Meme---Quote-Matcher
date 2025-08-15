@@ -14,7 +14,7 @@ memes = [
     'https://i.ytimg.com/vi/QwFjci1zPho/maxresdefault.jpg?sqp=-oaymwEmCIAKENAF8quKqQMa8AEB-AH-CYAC0AWKAgwIABABGE8gZShhMA8=&rs=AOn4CLDw_oN7E2bQFBiKkGMhEYK4-HXQhQ',
     'https://img-s-msn-com.akamaized.net/tenant/amp/entityid/BB1raLyw.img?w=690&h=388&m=6',
     'https://preview.redd.it/the-kendrick-mustard-of-duty-meme-is-huge-right-now-v0-evovdf5yrnve1.jpeg?auto=webp&s=0428c2e728bf7d41cd67829ed996b8e7918a99e8',
-    'https://pbs.twimg.com/media/EXDk0oYWkAEBe7D.jpg',
+    'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRhafJD7-2BQh7Wqe8uRZr5CEatRffNvOiT7w&s',
     'https://preview.redd.it/on-this-day-three-years-ago-u-lavameteor-posted-they-sus-v0-zr8cfaqja50c1.jpg?width=640&crop=smart&auto=webp&s=79340572b4618438ee98d910ecaa996812872e76',
     'https://media1.tenor.com/m/4eALS2xDONAAAAAd/oi-oi-oi-baka.gif',
     'https://i.ytimg.com/vi/NhHb9usKy6Q/maxresdefault.jpg',
@@ -23,8 +23,8 @@ memes = [
 ]
 
 quotes = [
-    'boom boom boom boom boomboom boom boom boom boom boom boomboomboom', // BOIIII ts (this) mysic so tuff
-    'Heh ha ha hahaha ha ha', // Evil rick laugh
+    'Sigma Patrick Bateman', // BOIIII ts (this) mysic so tuff
+    'Evil rick AI', // Evil rick laugh
     'Those who know 💀', // dos uno
     'Adrian, explain our friend group',
     "Coffee spelt backwards is eeffoc. Which is crazy, because until I've had my coffee, I don't give eeffoc... about anything.",
@@ -32,13 +32,13 @@ quotes = [
     'HEEEEEY SIX SEVENNN', // ts (this) is hella tuff boiiiii
     'Minecraft but I have carbon monoxide poisoning',
     'Put me in a lamar jackson edit',
-    'Sigma cat',
+    'Monday left me broken',
     "New chinese restaurant just opened up in the hood",
     'Fortnite or PUBG',
     'Can we just talk about the political and economic state of the world right now?',
     'Eye of Rah',
     'Call of Mustard',
-    'Only a spoonful',
+    "Bro's got X-Ray vision for grippers",
     'When the imposter is sus',
     'baka... baakaa. oi oi oi... BAAKAA!.. BAAAKAAAA!!',
     'You are my sunshine',
@@ -46,10 +46,25 @@ quotes = [
     '40+ year old pluggnb rapper 🔥🙏 did unc snap?',
 ]
 
-memes.forEach(function(url){
-    $("<img>", {src: url, alt: "meme"}).appendTo("#gallery");
-})
-
+function renderGallery() {
+    $("#gallery").empty();
+    memes.forEach(function(url, index){
+        $("<div>", {class: "meme-item"})
+            .append($("<img>", {src: url, alt: "meme"})) // Adds images
+            .append($("<p>").text(quotes[index])) // Adds quote
+            .append(
+                $("<button>", {class: "delete-btn", text: "Delete" }) // Delete button
+                    .on("click", function(){
+                        memes.splice(index, 1);   // remove meme
+                        quotes.splice(index, 1);  // remove quote
+                        renderGallery();          // re-render after deletion
+                    })
+            )
+            .appendTo("#gallery");
+    });
+}
+// Call this once on page load
+renderGallery();
 
 function searchContent(input){
 
