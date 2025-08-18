@@ -70,7 +70,6 @@ function searchContent(){
     memes_and_quotes = [...memes, ...quotes]
     search = $("#search").val();
     new RegExp(search, memes_and_quotes);
-    // use new RegExp()
 }
 
 function addContent(){
