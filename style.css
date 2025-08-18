@@ -12,10 +12,9 @@ html{
 }
 
 body{
-    background: #2a4e9b;
-    background: linear-gradient(90deg,rgba(42, 78, 155, 1) 0%, rgba(160, 73, 186, 1) 100%, rgba(237, 221, 83, 1) 100%);
+    background: linear-gradient(135deg, #ff9a9e, #fad0c4, #fbc2eb);
     color: white;
-    font-family: 'Courier New', Courier, monospace;
+    font-family: 'Comic Neue', cursive;
 }
 
 input{
@@ -24,7 +23,7 @@ input{
     border-radius: 10px;
     background-color: rgb(80, 35, 122);
     color: white;
-    font-family: 'Courier New', Courier, monospace;
+    font-family: 'Comic Neue', cursive;
 }
 
 button{
@@ -33,7 +32,12 @@ button{
     border-radius: 10px;
     background-color: #3863bf;
     color: white;
-    font-family: 'Courier New', Courier, monospace;
+    font-family: 'Comic Neue', cursive;
+}
+
+button:hover {
+    transform: scale(1.1);
+    cursor: pointer;
 }
 
 #gallery{
@@ -53,4 +57,13 @@ button{
     width: 200px;
     height: 200px;
     border-radius: 10px;
+}
+
+.meme-item p{
+    background: rgba(255,255,255,0.2);
+    padding: 10px 20px;
+    border-radius: 15px;
+    font-size: 1.1rem;
+    max-width: 300px;
+    margin: 10px auto;
 }

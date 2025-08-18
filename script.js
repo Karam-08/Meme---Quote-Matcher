@@ -1,5 +1,5 @@
 memes = [
- 'https://us-tuna-sounds-images.voicemod.net/88727c62-3d3e-4b43-982c-4e0332287ba1-1721417596236.jpg',
+    'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSRBhEJ_V7oOIsyFS9S-wLni5qDafazxKDVJA&s',
     'https://i1.sndcdn.com/artworks-JJOu6dvb4Swg3f5K-bl6o5g-t500x500.jpg',
     'https://cdn-images.dzcdn.net/images/cover/173ba7fc2bbf9e902b61a5636a3b6dc7/0x1900-000000-80-0-0.jpg',
     'https://media1.tenor.com/m/2hO1qFdswTcAAAAd/adrian-adrian-explain-our-friend-group.gif',
@@ -14,7 +14,7 @@ memes = [
     'https://i.ytimg.com/vi/QwFjci1zPho/maxresdefault.jpg?sqp=-oaymwEmCIAKENAF8quKqQMa8AEB-AH-CYAC0AWKAgwIABABGE8gZShhMA8=&rs=AOn4CLDw_oN7E2bQFBiKkGMhEYK4-HXQhQ',
     'https://img-s-msn-com.akamaized.net/tenant/amp/entityid/BB1raLyw.img?w=690&h=388&m=6',
     'https://preview.redd.it/the-kendrick-mustard-of-duty-meme-is-huge-right-now-v0-evovdf5yrnve1.jpeg?auto=webp&s=0428c2e728bf7d41cd67829ed996b8e7918a99e8',
-    'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRhafJD7-2BQh7Wqe8uRZr5CEatRffNvOiT7w&s',
+    'https://i.ytimg.com/vi/bIsp1K8eJG0/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLDUw_GHc5K2xp752g2bBCVbI8eZ9g',
     'https://preview.redd.it/on-this-day-three-years-ago-u-lavameteor-posted-they-sus-v0-zr8cfaqja50c1.jpg?width=640&crop=smart&auto=webp&s=79340572b4618438ee98d910ecaa996812872e76',
     'https://media1.tenor.com/m/4eALS2xDONAAAAAd/oi-oi-oi-baka.gif',
     'https://i.ytimg.com/vi/NhHb9usKy6Q/maxresdefault.jpg',
@@ -23,27 +23,27 @@ memes = [
 ]
 
 quotes = [
-    'Sigma Patrick Bateman', // BOIIII ts (this) mysic so tuff
-    'Evil rick AI', // Evil rick laugh
-    'Dos Uno 💀', // Those who know 💀
-    'Adrian, explain our friend group',
-    "Coffee spelt backwards is eeffoc. Which is crazy, because until I've had my coffee, I don't give eeffoc... about anything.",
-    'Kid insults Dhar Mann, gets dragged to hell by Satan himself',
-    'HEEEEEY SIX SEVENNN', // ts (this) is hella tuff boiiiii
-    'Minecraft but I have carbon monoxide poisoning',
-    'Put me in a lamar jackson edit',
-    'Monday left me broken',
-    "New chinese restaurant just opened up in the hood",
-    'Fortnite or PUBG',
-    'Can we just talk about the political and economic state of the world right now?',
-    'Eye of Rah',
-    'Call of Mustard',
-    "Bro's got X-Ray vision for grippers",
-    'When the imposter is sus',
-    'baka... baakaa. oi oi oi... BAAKAA!.. BAAAKAAAA!!',
-    'You are my sunshine',
-    'Honey we have guests Bring out the Fine China',
-    '40+ year old pluggnb rapper 🔥🙏 did unc snap?',
+    'Shocked Black Guy',
+    'Evil rick AI',
+    'Tuff Trollface 💀', // Dos Uno (those who know) 💀
+    'Adrian, explain our friend group.',
+    "Coffee spelt backwards is eeffoc. Which is crazy.",
+    'Kid insults Dhar Mann, gets dragged to hell by Satan himself!',
+    'HEEEEEY SIX SEVENNN!', // ts (this) is hella tuff boiiiii
+    'Minecraft but I have...',
+    'Put me in a lamar jackson edit.', // People did hilariously terrible edits of this guy
+    'Monday left me broken.',
+    "It comes with eggroll.",
+    'Fortnite or PUBG?',
+    'Can we just talk about the political and economic state of the world right now?', // Cringy dude
+    'Eye of Rah.',
+    'Call of Mustard meme is going viral',
+    "Does he know?",
+    'When the imposter is sus.',
+    'This dude is not real.',
+    'You are my sunshine, my only sunshine.',
+    'Honey we have guests Bring out the Fine China.',
+    '40+ year old PluggnB rapper 🔥🙏 did unc snap?', // Pluggnb is a hip-hop subgenre, just so you know. 
 ]
 
 function renderGallery(){
@@ -71,23 +71,69 @@ function searchContent(input){
 
 function addContent(){
     url = $("#memeURL").val();
-    index = $("#quoteText").val();
+    quote = $("#quoteText").val();
+
+    let imageRegex = /\.(jpg|png|gif)$/i
+    let quoteRegex =  /^(\S+\s+){2,}\S+/
+
+    if(!imageRegex.test(url)) {
+        $("#memeURL")
+        .val("")
+        .attr("placeholder", "Must end with .jpg/.png/.gif.")
+        .css("border", "2px solid red");
+        return;
+    }
+
+    if(!quoteRegex.test(quote)){
+        $("#quoteText")
+        .val("") // clear bad input
+        .attr("placeholder", "Must be at least 3 words")
+        .css("border", "2px solid red");
+        return;
+    }
+
     memes.push(url)
-    quotes.push(index)
+    quotes.push(quote)
     renderGallery();
+
+    $("#memeURL")
+    .val("")
+    .attr("placeholder", "Meme URL")
+    .css("border", "");
+
+    $("#quoteText")
+    .val("")
+    .attr("placeholder", "Quote")
+    .css("border", "");
 }
 
-function shuffleContent(){
-    let currentIndex = memes.length
+function shuffleArray(arr){
+    let currentIndex = arr.length
     while(currentIndex !== 0){
         let randomIndex = Math.floor(Math.random() * currentIndex);
         currentIndex--
 
-        [memes[currentIndex], memes[randomIndex]] = [memes[randomIndex], memes[currentIndex]]
+        [arr[currentIndex], arr[randomIndex]] = [arr[randomIndex], arr[currentIndex]]
     }
+}
+
+function shuffleContent(){
+    shuffleArray(memes)
+    shuffleArray(quotes)
     renderGallery();
 }
 
 function randomCombo(){
+    randomMeme = memes[Math.floor(Math.random() * memes.length)];
+    randomQuote = quotes[Math.floor(Math.random() * quotes.length)];
 
+    $("#randomCombination").empty(); // clear previous
+    $("<img>", {src: randomMeme, alt: "meme", width: "300"}).appendTo("#randomCombination");
+    $("<p>").text(randomQuote).appendTo("#randomCombination");
+
+    $("<button>").text("Delete")
+    .on("click", function(){
+        $("#randomCombination").empty();
+    })
+    .appendTo("#randomCombination");
 }
