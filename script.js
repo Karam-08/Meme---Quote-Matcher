@@ -46,8 +46,8 @@ quotes = [
     '40+ year old pluggnb rapper 🔥🙏 did unc snap?',
 ]
 
-function renderGallery() {
-    $("#gallery").empty();
+function renderGallery(){
+    $("#gallery").empty(); // Basically a refresh
     memes.forEach(function(url, index){
         $("<div>", {class: "meme-item"})
             .append($("<img>", {src: url, alt: "meme"})) // Adds images
@@ -85,10 +85,7 @@ function shuffleContent(){
 
         [memes[currentIndex], memes[randomIndex]] = [memes[randomIndex], memes[currentIndex]]
     }
-    $("#gallery").empty()
-    memes.forEach(function(url){
-        $("<img>", {src: url, alt: "meme"}).appendTo("#gallery");
-    })
+    renderGallery();
 }
 
 function randomCombo(){
