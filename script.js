@@ -25,10 +25,10 @@ memes = [
 quotes = [
     'Shocked Black Guy',
     "Steven here... I'm looking for Fifi.",
-    'Tuff Trollface 💀', // Dos Uno (those who know) 💀
+    'Tuff Trollface (goofy)', // Dos Uno (those who know) 💀
     'Adrian, explain our friend group.',
     "Coffee spelt backwards is eeffoc. Which is crazy.",
-    'Kid insults Dhar Mann, gets dragged to hell by Satan himself!',
+    'Kid insults Dhar Mann, gets instant Karma',
     'HEEEEEY SIX SEVENNN!', // ts (this) is hella tuff boiiiii
     "Sorry... You're NOT a Sigma.",
     'Put me in a lamar jackson edit.', // People did hilariously terrible edits of this guy
@@ -43,7 +43,7 @@ quotes = [
     'This dude is not real.',
     'You are my sunshine, my only sunshine.',
     "Bro thinks he's the thinker",
-    '40+ year old PluggnB rapper 🔥🙏 did unc snap?', // Pluggnb is a hip-hop subgenre, just so you know. 
+    '41 but I got 41 gold',
 ]
 
 function renderGallery(){
@@ -55,9 +55,9 @@ function renderGallery(){
             .append(
                 $("<button>", {class: "delete-btn", text: "Delete" }) // Delete button
                     .on("click", function(){
-                        memes.splice(index, 1);   // remove meme
-                        quotes.splice(index, 1);  // remove quote
-                        renderGallery();          // re-render after deletion
+                        memes.splice(index, 1);   // removes the meme
+                        quotes.splice(index, 1);  // removes the quote
+                        renderGallery();          // re-renders after deletion
                     })
             )
             .appendTo("#gallery");
@@ -67,29 +67,61 @@ renderGallery();
 
 
 function searchContent(){
-    memes_and_quotes = [...memes, ...quotes]
-    search = $("#search").val();
-    new RegExp(search, memes_and_quotes);
+    const search = $("#search").val().trim();
+    const regex = new RegExp(search, "i"); // makes it case-insensitive
+
+    // combine memes + quotes into objects so we can keep them paired by index
+    const results = memes
+        .map((meme, i) => ({meme, quote: quotes[i]}))
+        // pairs the meme and quote together in a map for easy searching
+        .filter(item => regex.test(item.meme) || regex.test(item.quote));
+        // regex tests for the meme or quote
+
+    // Clears the gallery
+    $("#gallery").empty();
+
+    if(results.length === 0){ // If there's no results
+        $("#gallery").append("<p>No matches found.</p>");
+        return;
+    }
+
+    if(search === ""){ // If there's nothing in the search bar
+        renderGallery(); // Refresh the page back to normal
+        return;
+    }
+
+    results.forEach(item => {
+        let $memeItem = $("<div>", {class: "meme-item"});
+
+        $("<img>", { src: item.meme, alt: "meme" }).appendTo($memeItem);
+        $("<p>").text(item.quote).appendTo($memeItem);
+
+        $("#gallery").append($memeItem);
+        // $memeItem contains is a class that contains the meme and the p tag already defined in the CSS
+    });
 }
 
 function addContent(){
     url = $("#memeURL").val();
     quote = $("#quoteText").val();
 
-    let imageRegex = /\.(jpg|png|gif)$/i
+    let imageRegex = /\.(jpg|png|gif)$/i // pattern to make sure it's a .jpg, .png, or a .gif 
     let quoteRegex =  /^(\S+\s+){2,}\S+/
+    // \S+ is one or more non white space characters (a word)
+    // \s+ is one or more white space characters
+    // the \S+ at the end ensures a third word without a space
 
     if(!imageRegex.test(url)) {
         $("#memeURL")
-        .val("")
-        .attr("placeholder", "Must end with .jpg/.png/.gif.")
-        .css("border", "2px solid red");
+        .val("") // clear bad input
+        .attr("placeholder", "Must end with .jpg/.png/.gif.") // shows error
+        .css("border", "2px solid red"); // error border to make it stand out
         return;
     }
 
     if(!quoteRegex.test(quote)){
         $("#quoteText")
-        .val("") // clear bad input
+        .val("") 
         .attr("placeholder", "Must be at least 3 words")
         .css("border", "2px solid red");
         return;
@@ -99,6 +131,7 @@ function addContent(){
     quotes.push(quote)
     renderGallery();
 
+// Clears the textboxes
     $("#memeURL")
     .val("")
     .attr("placeholder", "Meme URL")
@@ -130,7 +163,7 @@ function randomCombo(){
     randomMeme = memes[Math.floor(Math.random() * memes.length)];
     randomQuote = quotes[Math.floor(Math.random() * quotes.length)];
 
-    $("#randomCombination").empty(); // clear previous
+    $("#randomCombination").empty(); // clears previous
     $("<img>", {src: randomMeme, alt: "meme", width: "300"}).appendTo("#randomCombination");
     $("<p>").text(randomQuote).appendTo("#randomCombination");
 
